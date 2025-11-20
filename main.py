@@ -1,26 +1,14 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
-from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication
+from overlay import DoraOverlay
 
-class DoraWindow(QWidget):
-    def _init_(self):
-        super()._init_()
-        self.setWindowTitle("Dora - Windows Assistant")
-        self.resize(500, 300)
 
-        layout = QVBoxLayout()
-        title = QLabel("Dora - Windows Assistant (Starter Project)")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(title)
-
-        credit = QLabel("Design By :- Chetan Wagh")
-        credit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(credit)
-
-        self.setLayout(layout)
-
-if _name_ == "_main_":
+def main():
     app = QApplication(sys.argv)
-    win = DoraWindow()
-    win.show()
+    window = DoraOverlay()
+    window.show()
     sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    main()
